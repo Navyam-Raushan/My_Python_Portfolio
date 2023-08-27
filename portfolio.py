@@ -1,11 +1,11 @@
 import streamlit as st
+import pandas
 
 st.set_page_config(layout="wide")
 col1, col2 = st.columns(2)
 
 with col1:
     st.image("images/my photo.jpeg")
-
 
 with col2:
     st.title("Navyam Raushan")
@@ -19,5 +19,16 @@ aboutme = """<h4>I am a Python Developer, here are some
               of my apps. Feel free to contact me.</h4>"""
 st.write(aboutme, unsafe_allow_html=True)
 
+# Making the mid part of the page
+col3, col4 = st.columns(2)
 
+df = pandas.read_csv("data.csv", sep=";")
+
+with col3:
+    for index, row in df[:10].iterrows():
+        st.header(row["title"])
+
+with col4:
+    for index, row in df[10:].iterrows():
+        st.header(row["title"])
 
