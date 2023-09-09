@@ -7,6 +7,6 @@ with st.form(key="my_form"):
     message = st.text_area("Enter your message")
     button = st.form_submit_button("Submit")
 
-
-
-
+    # The button will only be executed if it's pressed as it takes true.
+    if button:
+        print("I am pressed.")
