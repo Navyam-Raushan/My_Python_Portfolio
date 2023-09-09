@@ -1,5 +1,6 @@
 import smtplib
 import ssl
+import os
 
 
 # creating function by refactor of pycharm
@@ -9,7 +10,7 @@ def send_mail(message):
     port = 465
     # This password is created by google and only used by this app.
     username = "bsarthak935@gmail.com"
-    password = "lupwevndnduujnys"
+    password = os.getenv("PASSWORD")
 
     # I am receiver in this case and this app will login me first.
     receiver = "bsarthak935@gmail.com"
